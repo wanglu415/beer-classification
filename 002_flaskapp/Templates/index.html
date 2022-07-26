@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <body>
+  
+  <h2>Beer Product Classification Predictive Modeling</h2>
+  
+  <form method="POST" action="/">
+    ABV:<br>
+    <input type="number" step=any  name="ABV" value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['ABV'], ENT_QUOTES) : ''; ?>">
+    <br><br>
+    Median_IBU:<br>
+    <input type="number" step=any  name="Median_IBU" value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['Median_IBU'], ENT_QUOTES) : ''; ?>">
+    <br><br>
+    Style:<br>
+    <select name ="Style">
+     
+      <option value=''></option> 
+      <option value='Altbier'>Altbier</option>
+      <option value='Barleywine - American'>Barleywine - American</option>
+      <option value='Barleywine - English'>Barleywine - English</option>
+      <option value='Bitter - English'>Bitter - English</option>
+      <option value='Bitter - English Extra Special / Strong Bitter (ESB)'>Bitter - English Extra Special / Strong Bitter (ESB)</option>
+      <option value='Bière de Champagne / Bière Brut'>Bière de Champagne / Bière Brut</option>
+      <option value='Blonde Ale - American'>Blonde Ale - American</option>
+      <option value='Blonde Ale - Belgian'>Blonde Ale - Belgian</option>
+      <option value='Bock - Doppelbock'>Bock - Doppelbock</option>
+      <option value='Bock - Eisbock'>Bock - Eisbock</option>
+      <option value='Bock - Maibock'>Bock - Maibock</option>
+      <option value='Bock - Traditional'>Bock - Traditional</option>
+      <option value='Bock - Weizenbock'>Bock - Weizenbock</option>
+      <option value='Braggot'>Braggot</option>
+      <option value='Brett Beer'>Brett Beer</option>
+      <option value='Brown Ale - American'>Brown Ale - American</option>
+      <option value='Brown Ale - Belgian Dark'>Brown Ale - Belgian Dark</option>
+      <option value='Brown Ale - English'>Brown Ale - English</option>
+      <option value='California Common / Steam Beer'>California Common / Steam Beer</option>
+      <option value='Chile Beer'>Chile Beer</option>
+      <option value='Cream Ale'>Cream Ale</option>
+      <option value='Dubbel'>Dubbel</option>
+      <option value='Farmhouse Ale - Bière de Garde'>Farmhouse Ale - Bière de Garde</option>
+      <option value='Farmhouse Ale - Sahti'>Farmhouse Ale - Sahti</option>
+      <option value='Farmhouse Ale - Saison'>Farmhouse Ale - Saison</option>
+      <option value='Fruit and Field Beer'>Fruit and Field Beer</option>
+      <option value='Gruit / Ancient Herbed Ale'>Gruit / Ancient Herbed Ale</option>
+      <option value='Happoshu'>Happoshu</option>
+      <option value='Herb and Spice Beer'>Herb and Spice Beer</option>
+      <option value='IPA - American'>IPA - American</option>
+      <option value='IPA - Belgian'>IPA - Belgian</option>
+      <option value='IPA - Black / Cascadian Dark Ale'>IPA - Black / Cascadian Dark Ale</option>
+      <option value='IPA - Brut'>IPA - Brut</option>
+      <option value='IPA - English'>IPA - English</option>
+      <option value='IPA - Imperial'>IPA - Imperial</option>
+      <option value='IPA - New England'>IPA - New England</option>
+      <option value='Kvass'>Kvass</option>
+      <option value='Kölsch'>Kölsch</option>
+      <option value='Lager - Adjunct'>Lager - Adjunct</option>
+      <option value='Lager - American'>Lager - American</option>
+      <option value='Lager - American Amber / Red'>Lager - American Amber / Red</option>
+      <option value='Lager - European / Dortmunder Export'>Lager - European / Dortmunder Export</option>
+      <option value='Lager - European Dark'>Lager - European Dark</option>
+      <option value='Lager - European Pale'>Lager - European Pale</option>
+      <option value='Lager - European Strong'>Lager - European Strong</option>
+      <option value='Lager - Helles'>Lager - Helles</option>
+      <option value='Lager - India Pale Lager (IPL)'>Lager - India Pale Lager (IPL)</option>
+      <option value='Lager - Japanese Rice'>Lager - Japanese Rice</option>
+      <option value='Lager - Kellerbier / Zwickelbier'>Lager - Kellerbier / Zwickelbier</option>
+      <option value='Lager - Light'>Lager - Light</option>
+      <option value='Lager - Malt Liquor'>Lager - Malt Liquor</option>
+      <option value='Lager - Munich Dunkel'>Lager - Munich Dunkel</option>
+      <option value='Lager - Märzen / Oktoberfest'>Lager - Märzen / Oktoberfest</option>
+      <option value='Lager - Rauchbier'>Lager - Rauchbier</option>
+      <option value='Lager - Schwarzbier'>Lager - Schwarzbier</option>
+      <option value='Lager - Vienna'>Lager - Vienna</option>
+      <option value='Lambic - Faro'>Lambic - Faro</option>
+      <option value='Lambic - Fruit'>Lambic - Fruit</option>
+      <option value='Lambic - Gueuze'>Lambic - Gueuze</option>
+      <option value='Lambic - Traditional'>Lambic - Traditional</option>
+      <option value='Low Alcohol Beer'>Low Alcohol Beer</option>
+      <option value='Mild Ale - English Dark'>Mild Ale - English Dark</option>
+      <option value='Mild Ale - English Pale'>Mild Ale - English Pale</option>
+      <option value='Old Ale'>Old Ale</option>
+      <option value='Pale Ale - American'>Pale Ale - American</option>
+      <option value='Pale Ale - Belgian'>Pale Ale - Belgian</option>
+      <option value='Pale Ale - English'>Pale Ale - English</option>
+      <option value='Pilsner - Bohemian / Czech'>Pilsner - Bohemian / Czech</option>
+      <option value='Pilsner - German'>Pilsner - German</option>
+      <option value='Pilsner - Imperial'>Pilsner - Imperial</option>
+      <option value='Porter - American'>Porter - American</option>
+      <option value='Porter - Baltic'>Porter - Baltic</option>
+      <option value='Porter - English'>Porter - English</option>
+      <option value='Porter - Imperial'>Porter - Imperial</option>
+      <option value='Porter - Robust'>Porter - Robust</option>
+      <option value='Porter - Smoked'>Porter - Smoked</option>
+      <option value='Pumpkin Beer'>Pumpkin Beer</option>
+      <option value='Quadrupel (Quad)'>Quadrupel (Quad)</option>
+      <option value='Red Ale - American Amber / Red'>Red Ale - American Amber / Red</option>
+      <option value='Red Ale - Imperial'>Red Ale - Imperial</option>
+      <option value='Red Ale - Irish'>Red Ale - Irish</option>
+      <option value='Rye Beer'>Rye Beer</option>
+      <option value='Rye Beer - Roggenbier'>Rye Beer - Roggenbier</option>
+      <option value='Style_Scotch Ale / Wee Heavy'>Style_Scotch Ale / Wee Heavy</option>
+      <option value='Scottish Ale'>Scottish Ale</option>
+      <option value='Smoked Beer'>Smoked Beer</option>
+      <option value='Sour - Berliner Weisse'>Sour - Berliner Weisse</option>
+      <option value='Sour - Flanders Oud Bruin'>Sour - Flanders Oud Bruin</option>
+      <option value='Sour - Flanders Red Ale'>Sour - Flanders Red Ale</option>
+      <option value='Sour - Gose'>Sour - Gose</option>
+      <option value='Stout - American'>Stout - American</option>
+      <option value='Stout - American Imperial'>Stout - American Imperial</option>
+      <option value='Stout - English'>Stout - English</option>
+      <option value='Stout - Foreign / Export'>Stout - Foreign / Export</option>
+      <option value='Stout - Irish Dry'>Stout - Irish Dry</option>
+      <option value='Stout - Oatmeal'>Stout - Oatmeal</option>
+      <option value='Stout - Russian Imperial'>Stout - Russian Imperial</option>
+      <option value='Stout - Sweet / Milk'>Stout - Sweet / Milk</option>
+      <option value='Strong Ale - American'>Strong Ale - American</option>
+      <option value='Strong Ale - Belgian Dark'>Strong Ale - Belgian Dark</option>
+      <option value='Strong Ale - Belgian Pale'>Strong Ale - Belgian Pale</option>
+      <option value='Strong Ale - English'>Strong Ale - English</option>
+      <option value='Tripel'>Tripel</option>
+      <option value='Wheat Beer - American Dark'>Wheat Beer - American Dark</option>
+      <option value='Wheat Beer - American Pale'>Wheat Beer - American Pale</option>
+      <option value='Wheat Beer - Dunkelweizen'>Wheat Beer - Dunkelweizen</option>
+      <option value='Wheat Beer - Hefeweizen'>Wheat Beer - Hefeweizen</option>
+      <option value='Wheat Beer - Kristallweizen'>Wheat Beer - Kristallweizen</option>
+      <option value='Wheat Beer - Wheatwine'>Wheat Beer - Wheatwine</option>
+      <option value='Wheat Beer - Witbier'>Wheat Beer - Witbier</option>
+      <option value='Wild Ale'>Wild Ale</option>
+      <option value='Winter Warmer'>Winter Warmer</option>
+      
+    </select>
+  
+    
+    <br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  {% if pred %}
+  <p>The  beer product (Style: {{ Style }}; ABV: {{ ABV }}; Median_IBU: {{ Median_IBU}}) will be {{ pred }}</p>
+  {% endif %}
+
+  </body>
+</html>
